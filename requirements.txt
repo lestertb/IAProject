@@ -1,2 +1,6 @@
 # pip install -r requirements.txt
 
+fastapi>=0.75.1
+uvicorn>=0.17.6
+python-multipart>=0.0.5
+joblib>=1.1.0
