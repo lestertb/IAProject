@@ -4,3 +4,6 @@ fastapi>=0.75.1
 uvicorn>=0.17.6
 python-multipart>=0.0.5
 joblib>=1.1.0
+pandas>=1.4.2
+numpy>=1.22.3
+sklearn>=0.0
