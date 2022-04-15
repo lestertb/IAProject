@@ -1,0 +1,24 @@
+<div class="container text-center mt-5">
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header text-uppercase">LMD - Inteligencia Artificial</div>
+      <br>
+      <p> Presiona Start y saluda a LMD</p>
+      <div class="card-body">
+        <br>
+        <button [disabled]="!speech.error" class="btn btn-danger m-2" (click)="startService()">Start</button>
+        <h5 *ngIf="IAresponse1 != '' && speech.typeAudio == 1" class="text-left">IA respuesta</h5>
+        <div *ngIf="IAresponse1 != '' && speech.typeAudio == 1" class="card bg-light mt-2">
+            <p id="response" class="text-uppercase text-success mt-3">{{IAresponse1}}</p>
+        </div>
+        <h5 *ngIf="speech.typeAudio == 2" class="text-left">IA respuesta</h5>
+        <div *ngIf="speech.typeAudio == 2" class="card bg-light mt-2">
+            <p class="text-uppercase text-success mt-3">{{speech.responseApi.input1 + ' ' + speech.responseApi.input2}}</p>
+        </div>
+        <br>
+        <h5 class="text-left">Transcripción</h5>
+        <div class="card bg-light mt-2">
+            <p class="text-uppercase text-info mt-3">{{speech.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
