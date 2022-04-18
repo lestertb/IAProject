@@ -1,17 +1,31 @@
-#response {
-    display: block;
+#response{
+    margin: 10px 0 0 10px;
     white-space: nowrap;
-    border-right: 4px solid;
-    width: 118ch;
-
-    animation: typing 10s steps(118), blink .5s infinite step-end alternate;
     overflow: hidden;
-}
+    // width: 30em;
+    animation: type 4s steps(60, end); 
+  }
+  
+  #response:nth-child(2){
+    animation: type2 8s steps(60, end);
+  }
+  
 
-@keyframes typing {
-    from {width: 0}
-}
+  span{
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes type{ 
+    from { width: 0; } 
+  } 
+  
+  @keyframes type2{
+    0%{width: 0;}
+    50%{width: 0;}
+    100%{ width: 100; } 
+  } 
+  
+  @keyframes blink{
+    to{opacity: .0;}
+  }
 
-@keyframes blink {
-    50% { border-color: transparent}
-}

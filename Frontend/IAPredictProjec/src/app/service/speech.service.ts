@@ -14,12 +14,9 @@ export class SpeechService {
 
   audio = new Audio();
 
-  typeAudio = 0;
+  typeAudio = -1;
 
-  responseApi = {
-    input1: '',
-    input2: ''
-  };
+  showInputs1 = false;
 
   recognition = new webkitSpeechRecognition();
   isStoppedSpeechRecog = false;
@@ -43,6 +40,7 @@ export class SpeechService {
   }
 
   start() {
+    this.typeAudio = -1;
     this.isStoppedSpeechRecog = false;
     this.recognition.start();
     console.log("Speech recognition started")
@@ -61,32 +59,23 @@ export class SpeechService {
           this.audio.src = '../../assets/Bienvenida.mp3';
           this.audio.load();
           this.audio.play();
+          this.typeAudio = 0;
+          this.stop(true);
+          setTimeout(() => {
+            this.error = true;
+            //this.typeAudio = -1;
+          }, 12000);
+        } else if (this.text.trim().includes('Predicción precio autos') || this.text.trim().includes('predicción precio autos')) {
+          this.audio.src = '../../assets/rmodel1.mp3';
+          this.audio.load();
+          this.audio.play();
           this.typeAudio = 1;
           this.stop(true);
           setTimeout(() => {
             this.error = true;
-            this.typeAudio = 0;
-          }, 10000);
-          // voice.speak('Buenos días');
-        } else if (this.text.trim().includes('predicción modelo1') || this.text.trim().includes('Predicción modelo1')
-          || this.text.trim().includes('Predicción modelo 1') || this.text.trim().includes('predicción modelo 1')) {
-          console.log('holaa')
-          var formData = new FormData();
-          formData.append("input1", "TestInput1");
-          formData.append("input2", "TestInput2");
-          this.apiService.postModel1(formData)
-            .subscribe((data: any) => {
-              this.responseApi.input1 = data.input1;
-              this.responseApi.input2 = data.input2;
-            });
-          this.audio.src = '../../assets/Respuesta.mp3';
-          this.audio.load();
-          this.audio.play();
-          this.typeAudio = 2;
-          this.stop(false);
-          setTimeout(() => {
-            this.error = true;
-          }, 5000);
+            //this.typeAudio = -1;
+            this.showInputs1 = true;
+          }, 15000);
         }
         else {
           //this.stop(false);
@@ -112,4 +101,9 @@ export class SpeechService {
     }
     this.tempWords = ' ';
   }
+
+
+
+
+
 }

@@ -6,6 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import sklearn
 from array import array
 import numpy as np
+import pandas as pd
+from pyper import *
+import json
 
 # Create simple api rest
 app = FastAPI()
@@ -19,27 +22,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Simple get
+# Model price cost cars
 
 
-@app.get("/testGet")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/model1_autos")
+async def model1Predict(input1: str = Form(...), input2: str = Form(...), input3: str = Form(...)):
+    input1 = float(input1)
+    input2 = float(input2)
+    input3 = float(input3)
+    r = R(use_pandas=True)
+    model_rds_path = "autos.rds"
+    r.assign("rmodel", model_rds_path)
 
-# Get with params (id)
+    dataFrame = {'Selling_Price': [input1],
+                 'Kms_Driven': [input2], 'Year': [input3]}
+    data = pd.DataFrame(dataFrame)
 
+    r.assign("rdata", data)
 
-@app.get("/testGet/{id}")
-async def root(id: int):
-    return {"message": "Hello World", "id": id}
+    expr = 'model <- readRDS(rmodel); result <- predict(model, rdata)'
+    r(expr)
+    res = r.get('result')
 
-
-# Post body request
-@app.post("/model1")
-async def login(input1: str = Form(...), input2: str = Form(...)):
-    # Load model
-    model = load("Models\modelo_Autos")
-    result = model.predict(np.array([[-1.82411162, -0.56392439, -0.8299164, -0.5782049,  0.50018321,
-                                      1.35632689,  0.39148015, -0.17450057]]))
-    print(result)
-    return {"result": "result"}
+    return {"result": res}

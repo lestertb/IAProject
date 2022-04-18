@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   postModel1(data: any) {
-    return this.http.post(`${this.apiUrl}/model1`, data);
+    return this.http.post(`${this.apiUrl}/model1_autos`, data);
   }
 
 }
