@@ -10,9 +10,11 @@
         <div *ngIf="IAresponse != '' && speech.typeAudio == 0" class="card bg-light mt-2">
             <p id="response" class="text-uppercase text-success mt-3" style="width: 118ch;">{{IAresponse}}</p>
         </div>
+
+
         <h5 *ngIf="IAresponse1 != '' && speech.typeAudio == 1" class="text-left">IA respuesta</h5>
         <div *ngIf="IAresponse1 != '' && speech.typeAudio == 1" class="card bg-light mt-2">
-            <p id="response" class="text-uppercase text-success mt-3" style="width: 98ch;">{{IAresponse1}}</p>
+            <p id="response" class="text-uppercase text-success mt-3" style="width: 84ch;">{{IAresponse1}}</p>
             <p id="response" class="text-uppercase text-success mt-3" style="width: 62ch;">{{IAresponse11}}<span>|</span></p>
         </div>
         <form *ngIf="speech.showInputs1" #formModel1="ngForm" (ngSubmit)="onSubmit1(formModel1.value)"> 
@@ -27,8 +29,79 @@
           <input type="number" name="input3" placeholder="Año" ngModel> 
           <br/>
           <br/>
-          <button class="button" type="submit">Purchase</button>
+          <button class="button" type="submit">Predict</button>
        </form>
+
+
+       <h5 *ngIf="IAresponse2 != '' && speech.typeAudio == 2" class="text-left">IA respuesta</h5>
+        <div *ngIf="IAresponse2 != '' && speech.typeAudio == 2" class="card bg-light mt-2">
+            <p id="response" class="text-uppercase text-success mt-3" style="width: 103ch;">{{IAresponse2}}</p>
+            <p id="response" class="text-uppercase text-success mt-3" style="width: 51ch;">{{IAresponse22}}<span>|</span></p>
+        </div>
+        <form *ngIf="speech.showInputs2" #formModel2="ngForm" (ngSubmit)="onSubmit2(formModel2.value)"> 
+          <br/> 
+          <br/> 
+          <input type="number" name="input1" placeholder="Compró" ngModel> 
+          <br/> 
+          <br/>
+          <input type="number" name="input2" placeholder="Agregados al carro" ngModel> 
+          <br/> 
+          <br/>
+          <input type="number" name="input3" placeholder="Compra exitosa" ngModel> 
+          <br/>
+          <br/>
+          <button class="button" type="submit">Predict</button>
+       </form>
+
+       <h5 *ngIf="IAresponse3 != '' && speech.typeAudio == 3" class="text-left">IA respuesta</h5>
+       <div *ngIf="IAresponse3 != '' && speech.typeAudio == 3" class="card bg-light mt-2">
+           <p id="response" class="text-uppercase text-success mt-3" style="width: 103ch;">{{IAresponse3}}</p>
+           <p id="response" class="text-uppercase text-success mt-3" style="width: 37ch;">{{IAresponse33}}<span>|</span></p>
+       </div>
+       <form *ngIf="speech.showInputs3" #formModel3="ngForm" (ngSubmit)="onSubmit3(formModel3.value)"> 
+         <br/> 
+         <br/> 
+         <input type="number" name="input1" placeholder="Densidad" ngModel> 
+         <br/> 
+         <br/>
+         <input type="number" name="input2" placeholder="Tamaño abdomen" ngModel> 
+         <br/> 
+         <br/>
+         <button class="button" type="submit">Predict</button>
+      </form>
+
+
+      <h5 *ngIf="IAresponse5 != '' && speech.typeAudio == 5" class="text-left">IA respuesta</h5>
+      <div *ngIf="IAresponse5 != '' && speech.typeAudio == 5" class="card bg-light mt-2">
+          <p id="response" class="text-uppercase text-success mt-3" style="width: 102ch;">{{IAresponse5}}</p>
+          <p id="response" class="text-uppercase text-success mt-3" style="width: 55ch;">{{IAresponse55}}<span>|</span></p>
+      </div>
+      <form *ngIf="speech.showInputs5" #formModel5="ngForm" (ngSubmit)="onSubmit5(formModel5.value)"> 
+        <br/> 
+        <br/> 
+        <input type="number" name="input1" placeholder="Total de comerciantes" ngModel> 
+        <br/> 
+        <br/>
+        <input type="number" name="input2" placeholder="Total de comentarios" ngModel> 
+        <br/> 
+        <br/>
+        <button class="button" type="submit">Predict</button>
+     </form>
+
+     <h5 *ngIf="IAresponse6 != '' && speech.typeAudio == 6" class="text-left">IA respuesta</h5>
+     <div *ngIf="IAresponse6 != '' && speech.typeAudio == 6" class="card bg-light mt-2">
+         <p id="response" class="text-uppercase text-success mt-3" style="width: 102ch;">{{IAresponse6}}</p>
+         <p id="response" class="text-uppercase text-success mt-3" style="width: 14ch;">{{IAresponse66}}<span>|</span></p>
+     </div>
+     <form *ngIf="speech.showInputs6" #formModel6="ngForm" (ngSubmit)="onSubmit6(formModel6.value)"> 
+       <br/> 
+       <br/> 
+       <input type="number" name="input1" placeholder="Cargos" ngModel> 
+       <br/> 
+       <br/>
+       <button class="button" type="submit">Predict</button>
+    </form>
+
 
         <h5 *ngIf="responseApi != ''" class="text-left">IA respuesta</h5>
         <div *ngIf="responseApi != ''" class="card bg-light mt-2">

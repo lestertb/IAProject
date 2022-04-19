@@ -14,4 +14,24 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/model1_autos`, data);
   }
 
+  postModel2(data: any) {
+    return this.http.post(`${this.apiUrl}/model2_tiempoWeb`, data);
+  }
+
+  postModel3(data: any) {
+    return this.http.post(`${this.apiUrl}/model3_grease`, data);
+  }
+
+  postModel4(data: any) {
+    return this.http.post(`${this.apiUrl}/model4_stock`, data);
+  }
+
+  postModel5(data: any) {
+    return this.http.post(`${this.apiUrl}/model5_VideoGame`, data);
+  }
+
+  postModel6(data: any) {
+    return this.http.post(`${this.apiUrl}/model6_insuranceBMI`, data);
+  }
+
 }

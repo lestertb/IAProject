@@ -18,6 +18,24 @@ export class SpeechService {
 
   showInputs1 = false;
 
+  showInputs2 = false;
+
+  showInputs3 = false;
+
+  showInputs4 = false;
+
+  showInputs5 = false;
+
+  showInputs6 = false;
+
+  showInputs7 = false;
+
+  showInputs8 = false;
+
+  showInputs9 = false;
+
+  showInputs10 = false;
+
   recognition = new webkitSpeechRecognition();
   isStoppedSpeechRecog = false;
   public text = '';
@@ -72,10 +90,66 @@ export class SpeechService {
           this.typeAudio = 1;
           this.stop(true);
           setTimeout(() => {
-            this.error = true;
+            //this.error = true;
             //this.typeAudio = -1;
             this.showInputs1 = true;
           }, 15000);
+        } else if (this.text.trim().includes('Predicción tiempo en una web') || this.text.trim().includes('predicción tiempo en una web')) {
+          this.audio.src = '../../assets/rmodel2.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 2;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs2 = true;
+          }, 13000);
+        } else if (this.text.trim().includes('Predicción del porcentaje de grasa') || this.text.trim().includes('predicción del porcentaje de grasa')
+          || this.text.trim().includes('Predicción de porcentaje de grasa') || this.text.trim().includes('predicción de porcentaje de grasa')) {
+          this.audio.src = '../../assets/rmodel3.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 3;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs3 = true;
+          }, 13000);
+        } else if (this.text.trim().includes('Predicción del precio de las acciones') || this.text.trim().includes('predicción del precio de las acciones')) {
+          this.audio.src = '../../assets/rmodel4.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 4;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs4 = true;
+          }, 13000);
+        } else if (this.text.trim().includes('Predicción de la popularidad de un juego') || this.text.trim().includes('predicción de la popularidad de un juego')) {
+          this.audio.src = '../../assets/rmodel5.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 5;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs5 = true;
+          }, 13000);
+        } else if (this.text.trim().includes('Predicción del precio de un seguro de un cliente') || this.text.trim().includes('predicción del precio de un seguro de un cliente')) {
+          this.audio.src = '../../assets/rmodel6.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 6;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs6 = true;
+          }, 9000);
         }
         else {
           //this.stop(false);
