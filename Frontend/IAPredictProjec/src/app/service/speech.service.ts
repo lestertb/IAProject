@@ -36,6 +36,8 @@ export class SpeechService {
 
   showInputs10 = false;
 
+  showInputs11 = false;
+
   recognition = new webkitSpeechRecognition();
   isStoppedSpeechRecog = false;
   public text = '';
@@ -139,7 +141,7 @@ export class SpeechService {
             //this.typeAudio = -1;
             this.showInputs5 = true;
           }, 13000);
-        } else if (this.text.trim().includes('Predicción del precio de un seguro de un cliente') || this.text.trim().includes('predicción del precio de un seguro de un cliente')) {
+        } else if (this.text.trim().includes('Predicción de un seguro de un cliente') || this.text.trim().includes('predicción de un seguro de un cliente')) {
           this.audio.src = '../../assets/rmodel6.mp3';
           this.audio.load();
           this.audio.play();
@@ -150,6 +152,61 @@ export class SpeechService {
             //this.typeAudio = -1;
             this.showInputs6 = true;
           }, 9000);
+        } else if (this.text.trim().includes('Predicción de la temperatura mínima') || this.text.trim().includes('predicción de la temperatura mínima')) {
+          this.audio.src = '../../assets/rmodel7.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 7;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs7 = true;
+          }, 13000);
+        } else if (this.text.trim().includes('Predicción del precio promedio del aguacate') || this.text.trim().includes('predicción del precio promedio del aguacate')) {
+          this.audio.src = '../../assets/rmodel8.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 8;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs8 = true;
+          }, 14000);
+        } else if (this.text.trim().includes('Predicción del gasto promedio de energía') || this.text.trim().includes('predicción del gasto promedio de energía')) {
+          this.audio.src = '../../assets/rmodel9.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 9;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs9 = true;
+          }, 20000);
+        } else if (this.text.trim().includes('Predicción de la compra viernes negro') || this.text.trim().includes('predicción de la compra viernes negro')) {
+          this.audio.src = '../../assets/rmodel10.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 10;
+          this.stop(true);
+          setTimeout(() => {
+            //this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs10 = true;
+          }, 17000);
+        } else if (this.text.trim().includes('Lista de comandos') || this.text.trim().includes('lista de comandos')) {
+          this.audio.src = '../../assets/listCommands.mp3';
+          this.audio.load();
+          this.audio.play();
+          this.typeAudio = 11;
+          this.stop(true);
+          setTimeout(() => {
+            this.error = true;
+            //this.typeAudio = -1;
+            this.showInputs11 = true;
+          }, 5000);
         }
         else {
           //this.stop(false);

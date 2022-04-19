@@ -26,6 +26,28 @@ export class InteractIAComponent implements OnInit {
   public IAresponse55: string = '-Total de comerciantes 1000, -Total de comentarios 7000';
   public IAresponse6: string = 'Para realizar la predicción del precio de un seguro de un cliente. Debes digitar los valores solictados. Ejemplo:';
   public IAresponse66: string = '-Cargos 50000';
+  public IAresponse7: string = 'Para realizar la predicción de la temperatura mínima. Debes digitar los valores solictados. Ejemplo:';
+  public IAresponse77: string = '-Temperatura máxima 35, Temperatura de las 9am 30';
+  public IAresponse8: string = 'Para realizar la predicción del precio promedio del aguacate. Debes digitar los valores solictados. Ejemplo:';
+  public IAresponse88: string = '-Volumen total 5000, Tipo aguacate 4046 1600';
+  public IAresponse9: string = 'Para realizar la predicción del gasto promedio de energía. Debes digitar los valores solictados. Ejemplo: Luz 60, Cocina 30,';
+  public IAresponse99: string = 'Sala 30, Lavado 30, Oficina 30, Baño 30, Fuera Norte 30, Cuarto Planchado 30, Cuarto Niños 30, Cuarto Padres 30';
+  public IAresponse10: string = 'Para realizar la predicción de la compra en viernes negro. Debes digitar los valores solictados. Ejemplo:';
+  public IAresponse1010: string = '- Género 0, - Ocupación 7, - Años de vivir en la ciudad 2, - Estado civil 1, - Producto 1 1, - Producto 2 8, Producto 3 17';
+  public IAresponseCommands: string = `
+  - Buenas LMD
+  - Predicción precio autos
+  - Predicción tiempo en una web
+  - Predicción del porcentaje de grasa
+  - Predicción del precio de las acciones
+  - Predicción de la popularidad de un juego
+  - Predicción de un seguro de un cliente
+  - Predicción de la temperatura mínima
+  - Predicción del precio promedio del aguacate
+  - Predicción del gasto promedio de energía
+  - Predicción de la compra viernes negro
+  - Lista de comandos
+  `;
 
 
   constructor(public speech: SpeechService, public apiService: ApiService) {
@@ -125,6 +147,79 @@ export class InteractIAComponent implements OnInit {
     var formData = new FormData();
     formData.append("input1", value.input1);
     this.apiService.postModel6(formData)
+      .subscribe((data: any) => {
+        this.responseApi = data.result;
+        this.audio.src = '../../assets/Respuesta.mp3';
+        this.audio.load();
+        this.audio.play();
+      });
+  }
+
+  onSubmit7(value: any): void {
+    this.speech.showInputs7 = false;
+    this.speech.error = true;
+    var formData = new FormData();
+    formData.append("input1", value.input1);
+    formData.append("input2", value.input2);
+    this.apiService.postModel7(formData)
+      .subscribe((data: any) => {
+        this.responseApi = data.result;
+        this.audio.src = '../../assets/Respuesta.mp3';
+        this.audio.load();
+        this.audio.play();
+      });
+  }
+
+  onSubmit8(value: any): void {
+    this.speech.showInputs8 = false;
+    this.speech.error = true;
+    var formData = new FormData();
+    formData.append("input1", value.input1);
+    formData.append("input2", value.input2);
+    this.apiService.postModel8(formData)
+      .subscribe((data: any) => {
+        this.responseApi = data.result;
+        this.audio.src = '../../assets/Respuesta.mp3';
+        this.audio.load();
+        this.audio.play();
+      });
+  }
+
+  onSubmit9(value: any): void {
+    this.speech.showInputs9 = false;
+    this.speech.error = true;
+    var formData = new FormData();
+    formData.append("input1", value.input1);
+    formData.append("input2", value.input2);
+    formData.append("input3", value.input3);
+    formData.append("input4", value.input4);
+    formData.append("input5", value.input5);
+    formData.append("input6", value.input6);
+    formData.append("input7", value.input7);
+    formData.append("input8", value.input8);
+    formData.append("input9", value.input9);
+    formData.append("input10", value.input10);
+    this.apiService.postModel9(formData)
+      .subscribe((data: any) => {
+        this.responseApi = data.result;
+        this.audio.src = '../../assets/Respuesta.mp3';
+        this.audio.load();
+        this.audio.play();
+      });
+  }
+
+  onSubmit10(value: any): void {
+    this.speech.showInputs10 = false;
+    this.speech.error = true;
+    var formData = new FormData();
+    formData.append("input1", value.input1);
+    formData.append("input2", value.input2);
+    formData.append("input3", value.input3);
+    formData.append("input4", value.input4);
+    formData.append("input5", value.input5);
+    formData.append("input6", value.input6);
+    formData.append("input7", value.input7);
+    this.apiService.postModel10(formData)
       .subscribe((data: any) => {
         this.responseApi = data.result;
         this.audio.src = '../../assets/Respuesta.mp3';

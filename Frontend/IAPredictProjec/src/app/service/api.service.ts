@@ -34,4 +34,20 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/model6_insuranceBMI`, data);
   }
 
+  postModel7(data: any) {
+    return this.http.post(`${this.apiUrl}/model7_MinTemp`, data);
+  }
+
+  postModel8(data: any) {
+    return this.http.post(`${this.apiUrl}/model8_Avocado`, data);
+  }
+
+  postModel9(data: any) {
+    return this.http.post(`${this.apiUrl}/model9_energy`, data);
+  }
+
+  postModel10(data: any) {
+    return this.http.post(`${this.apiUrl}/model10_blackFriday`, data);
+  }
+
 }
