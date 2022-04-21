@@ -96,6 +96,23 @@
             <br/>
             <button class="button btn btn-danger m-2" type="submit" style="background-color: #228DFF; border-color: #228DFF;">Predict</button>
           </form>
+
+          <h5 *ngIf="IAresponse4 != '' && speech.typeAudio == 4" class="text-left">IA respuesta</h5>
+          <div *ngIf="IAresponse4 != '' && speech.typeAudio == 4" class="card mt-2" style="background-color: #e4e4e4;">
+              <p id="response" class="text-uppercase text-info mt-3" style="width: 103ch;">{{IAresponse4}}</p>
+              <p id="response" class="text-uppercase text-info mt-3" style="width: 37ch;">{{IAresponse44}}<span>|</span></p>
+          </div>
+          <form *ngIf="speech.showInputs4" #formModel4="ngForm" (ngSubmit)="onSubmit4(formModel4.value)"> 
+            <br/> 
+            <br/> 
+            <input type="number" name="input1" placeholder="Precio Inicial" ngModel> 
+            <br/> 
+            <br/>
+            <input type="number" name="input2" placeholder="Precio Mayor" ngModel> 
+            <br/> 
+            <br/>
+            <button class="button btn btn-danger m-2" type="submit" style="background-color: #228DFF; border-color: #228DFF;">Predict</button>
+          </form>
   
   
           <h5 *ngIf="IAresponse5 != '' && speech.typeAudio == 5" class="text-left">IA respuesta</h5>
@@ -172,38 +189,68 @@
               <p id="response" class="text-uppercase text-info mt-3" style="width: 111ch;">{{IAresponse99}}<span>|</span></p>
           </div>
           <form *ngIf="speech.showInputs9" #formModel9="ngForm" (ngSubmit)="onSubmit9(formModel9.value)"> 
-            <br/> 
-            <br/> 
-            <input type="number" name="input1" placeholder="Luz" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input2" placeholder="Cocina" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input3" placeholder="Sala" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input4" placeholder="Lavado" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input5" placeholder="Oficina" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input6" placeholder="Baño" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input7" placeholder="Fuera Norte" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input8" placeholder="Cuarto Planchado" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input9" placeholder="Cuarto Niños" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input10" placeholder="Cuarto Padres" ngModel> 
-            <br/> 
-            <br/>
+
+            <table style="width:100%">
+              <tr>
+                <td>
+                  <br/> 
+                  <br/> 
+                  <input type="number" name="input1" placeholder="Luz" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input2" placeholder="Cocina" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input3" placeholder="Sala" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input4" placeholder="Lavado" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input5" placeholder="Oficina" ngModel> 
+                </td>
+                <br/> 
+                <br/>
+              </tr>
+              <br/> 
+              <br/>
+              <tr>
+                <td>
+                  <input type="number" name="input6" placeholder="Baño" ngModel> 
+                  <br/> 
+                  <br/>
+                </td>
+                <td>
+                  <input type="number" name="input7" placeholder="Fuera Norte" ngModel> 
+                  <br/> 
+                  <br/>
+                </td>
+                <td>
+                  <input type="number" name="input8" placeholder="Cuarto Planchado" ngModel> 
+                  <br/> 
+                  <br/>
+                </td>
+                <td>
+                  <input type="number" name="input9" placeholder="Cuarto Niños" ngModel> 
+                  <br/> 
+                  <br/>
+                </td>
+                <td>
+                  <input type="number" name="input10" placeholder="Cuarto Padres" ngModel> 
+                  <br/> 
+                  <br/>
+                </td>
+              </tr>
+            </table>
+            
             <button class="button btn btn-danger m-2" type="submit" style="background-color: #228DFF; border-color: #228DFF;">Predict</button>
           </form>
   
@@ -213,27 +260,43 @@
               <p id="response" class="text-uppercase text-info mt-3" style="width: 122ch;">{{IAresponse1010}}<span>|</span></p>
           </div>
           <form *ngIf="speech.showInputs10" #formModel10="ngForm" (ngSubmit)="onSubmit10(formModel10.value)"> 
-            <br/> 
-            <br/> 
-            <input type="number" name="input1" placeholder="Género" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input2" placeholder="Ocupación" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input3" placeholder="Años de vivir en la ciudad" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input4" placeholder="Estado civil" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input5" placeholder="Producto1" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input6" placeholder="Producto2" ngModel> 
-            <br/> 
-            <br/>
-            <input type="number" name="input7" placeholder="Producto3" ngModel> 
+            <table style="margin: 0 auto;">
+              <tr>
+                <td>
+                  <br/> 
+                  <br/> 
+                  <input type="number" name="input1" placeholder="Género" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input2" placeholder="Ocupación" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input3" placeholder="Años de vivir en la ciudad" ngModel> 
+                </td>
+                <td>
+                  <br/> 
+                  <br/>
+                  <input type="number" name="input4" placeholder="Estado civil" ngModel> 
+                </td>
+              </tr>
+              <br/> 
+              <br/>
+              <tr>
+                <td>
+                  <input type="number" name="input5" placeholder="Producto1" ngModel>  
+                </td>
+                <td>
+                  <input type="number" name="input6" placeholder="Producto2" ngModel> 
+                </td>
+                <td>
+                  <input type="number" name="input7" placeholder="Producto3" ngModel> 
+                </td>
+              </tr>
+            </table>
             <br/> 
             <br/>
             <button class="button btn btn-danger m-2" type="submit" style="background-color: #228DFF; border-color: #228DFF;">Predict</button>
